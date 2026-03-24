@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0Carbon | Engineering a Net Zero Future</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">0CARBON</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Case Studies</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                <span class="mode-icon"></span>
+            </button>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Strategic Sustainability for a <span class="text-green">Net Zero</span> World.</h1>
+            <p>Data-driven consulting helping enterprises transition to carbon neutrality through innovative engineering
+                and policy design.</p>
+            <a href="#contact" class="btn-primary">Consult Our Experts</a>
+        </div>
+    </header>
+
+    <section id="services" class="services">
+        <h2 class="section-title">Our Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Carbon Auditing</h3>
+                <p>Comprehensive lifecycle analysis to quantify your organisation's total carbon footprint.</p>
+            </div>
+            <div class="card">
+                <h3>Supply Chain Decarbonisation</h3>
+                <p>Optimising logistics and procurement to eliminate Scope 3 emissions.</p>
+            </div>
+            <div class="card">
+                <h3>ESG Reporting</h3>
+                <p>Aligning your business with global sustainability standards and regulatory requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="case-studies">
+        <h2 class="section-title">Success Stories</h2>
+        <div class="grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="tag">Manufacturing</span>
+                    <h3>SteelCorp Decarbonisation</h3>
+                    <p>Reduced Scope 1 emissions by 40% via hydrogen integration.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="tag">Logistics</span>
+                    <h3>Eco-Fleet Initiative</h3>
+                    <p>Transitioned 500+ vehicles to electric last-mile delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Initiate Your Transition</h2>
+            <form id="contactForm">
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <small class="error-msg"></small>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Corporate Email" required>
+                    <small class="error-msg"></small>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" rows="5" placeholder="Project Details" required></textarea>
+                    <small class="error-msg"></small>
+                </div>
+                <button type="submit" class="btn-primary">Send Brief</button>
+            </form>
+            <div id="formFeedback" class="hidden">Thank you. Our consultants will reach out within 24 hours.</div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

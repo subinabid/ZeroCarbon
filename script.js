@@ -1,61 +1,86 @@
-// Theme Toggle Logic
-const toggleBtn = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
-
-toggleBtn.addEventListener('click', () => {
-    const currentTheme = htmlElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    htmlElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-});
-
-// Form Validation
+const themeToggle = document.getElementById('theme-toggle');
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
 const contactForm = document.getElementById('contactForm');
 const formFeedback = document.getElementById('formFeedback');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let isValid = true;
+const setTheme = (theme) => {
+    htmlElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+};
+
+const preferredTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+setTheme(preferredTheme);
+
+themeToggle.addEventListener('click', () => {
+    const current = htmlElement.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+});
+
+navLinks.forEach((link) => {
+    link.addEventListener('click', () => navMenu.classList.remove('open'));
+});
+
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
     const name = document.getElementById('name');
     const email = document.getElementById('email');
     const message = document.getElementById('message');
+    let isValid = true;
 
     if (name.value.trim().length < 2) {
-        showError(name, "Name is too short");
+        showError(name, 'Please enter your name.');
         isValid = false;
     } else {
         hideError(name);
     }
 
     if (!email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-        showError(email, "Enter a valid corporate email");
+        showError(email, 'Enter a valid email address.');
         isValid = false;
     } else {
         hideError(email);
     }
 
-    if (isValid) {
-        contactForm.style.display = 'none';
-        formFeedback.classList.remove('hidden');
-        console.log("Submission:", { name: name.value, email: email.value, msg: message.value });
+    if (message.value.trim().length < 10) {
+        showError(message, 'Tell us a bit more about your project.');
+        isValid = false;
+    } else {
+        hideError(message);
     }
+
+    if (!isValid) {
+        return;
+    }
+
+    contactForm.reset();
+    contactForm.classList.add('hidden');
+    formFeedback.classList.remove('hidden');
+    console.log('Contact intent submitted:', {
+        name: name.value,
+        email: email.value,
+        message: message.value,
+    });
 });
 
-function showError(input, msg) {
-    const group = input.parentElement;
+function showError(field, message) {
+    const group = field.closest('.input-group');
     const error = group.querySelector('.error-msg');
-    input.style.borderColor = '#ff7675';
-    error.innerText = msg;
+    field.style.borderColor = '#f87171';
+    error.textContent = message;
     error.style.display = 'block';
 }
 
-function hideError(input) {
-    input.style.borderColor = 'var(--border)';
-    input.parentElement.querySelector('.error-msg').style.display = 'none';
-}
-
-// Initial Load
-if (localStorage.getItem('theme') === 'light') {
-    htmlElement.setAttribute('data-theme', 'light');
+function hideError(field) {
+    const group = field.closest('.input-group');
+    const error = group.querySelector('.error-msg');
+    field.style.borderColor = 'var(--border)';
+    error.style.display = 'none';
 }

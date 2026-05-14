@@ -7,91 +7,169 @@
     <title>0Carbon | Engineering a Net Zero Future</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <nav class="navbar">
-        <div class="logo">0CARBON</div>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Case Studies</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">
-                <span class="mode-icon"></span>
+    <div class="page-shell">
+        <nav class="navbar">
+            <div class="brand">
+                <span class="brand-mark">0</span>
+                <span class="brand-text">CARBON</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-        </ul>
-    </nav>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+                        <span class="mode-icon"></span>
+                    </button>
+                    <a class="btn-outline" href="#contact">Get Started</a>
+                </div>
+            </div>
+        </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Strategic Sustainability for a <span class="text-green">Net Zero</span> World.</h1>
-            <p>Data-driven consulting helping enterprises transition to carbon neutrality through innovative engineering
-                and policy design.</p>
-            <a href="#contact" class="btn-primary">Consult Our Experts</a>
-        </div>
-    </header>
+        <header class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Engineering a greener future</p>
+                <h1>Design better pathways to <span>Net Zero</span> with confidence.</h1>
+                <p>We blend engineering, sustainability strategy, and practical delivery to cut emissions while improving business resilience.</p>
+                <div class="hero-actions">
+                    <a class="btn-primary" href="#contact">Book a review</a>
+                    <a class="btn-secondary" href="#projects">View case studies</a>
+                </div>
+                <div class="hero-metrics">
+                    <div>
+                        <strong>35%</strong>
+                        <span>Average emissions reduction</span>
+                    </div>
+                    <div>
+                        <strong>120+</strong>
+                        <span>Supply chain transformations</span>
+                    </div>
+                    <div>
+                        <strong>24/7</strong>
+                        <span>Support through delivery</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="panel-badge">Featured project</div>
+                <h2>Grid optimisation for an industrial campus</h2>
+                <p>Combining energy modelling, emission reduction design, and execution planning to deliver low-carbon operations.</p>
+                <div class="panel-footer">
+                    <span>5.2% energy savings</span>
+                    <span>8-month program</span>
+                </div>
+            </div>
+        </header>
 
-    <section id="services" class="services">
-        <h2 class="section-title">Our Expertise</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Carbon Auditing</h3>
-                <p>Comprehensive lifecycle analysis to quantify your organisation's total carbon footprint.</p>
-            </div>
-            <div class="card">
-                <h3>Supply Chain Decarbonisation</h3>
-                <p>Optimising logistics and procurement to eliminate Scope 3 emissions.</p>
-            </div>
-            <div class="card">
-                <h3>ESG Reporting</h3>
-                <p>Aligning your business with global sustainability standards and regulatory requirements.</p>
-            </div>
-        </div>
-    </section>
+        <main>
+            <section id="services" class="services">
+                <div class="section-intro">
+                    <span class="section-label">Our expertise</span>
+                    <h2>Services that accelerate your carbon transition.</h2>
+                    <p>From audit to implementation, we help businesses reduce carbon intensity, lower operating cost, and stay ahead of regulatory change.</p>
+                </div>
+                <div class="grid grid-3">
+                    <article class="service-card">
+                        <div class="service-icon">01</div>
+                        <h3>Carbon auditing</h3>
+                        <p>Detailed measurement across Scope 1, 2 and 3 to identify high-impact reduction opportunities.</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">02</div>
+                        <h3>Decarbonisation planning</h3>
+                        <p>Roadmaps, scenario modelling, and investment-grade project framing for your net zero journey.</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">03</div>
+                        <h3>ESG delivery</h3>
+                        <p>Reporting, governance, and stakeholder alignment to turn sustainability goals into measurable outcomes.</p>
+                    </article>
+                </div>
+            </section>
 
-    <section id="projects" class="case-studies">
-        <h2 class="section-title">Success Stories</h2>
-        <div class="grid">
-            <div class="project-card">
-                <div class="project-content">
-                    <span class="tag">Manufacturing</span>
-                    <h3>SteelCorp Decarbonisation</h3>
-                    <p>Reduced Scope 1 emissions by 40% via hydrogen integration.</p>
+            <section id="projects" class="case-studies">
+                <div class="section-intro">
+                    <span class="section-label">Impact</span>
+                    <h2>Case studies from modern energy transformations.</h2>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <span class="tag">Logistics</span>
-                    <h3>Eco-Fleet Initiative</h3>
-                    <p>Transitioned 500+ vehicles to electric last-mile delivery.</p>
+                <div class="grid grid-2">
+                    <article class="project-card project-card--light">
+                        <span class="tag">Manufacturing</span>
+                        <h3>SteelCorp decarbonisation</h3>
+                        <p>Reduced Scope 1 emissions by 40% through hydrogen fuel integration and efficiency upgrades.</p>
+                    </article>
+                    <article class="project-card project-card--dark">
+                        <span class="tag">Logistics</span>
+                        <h3>Eco-fleet initiative</h3>
+                        <p>Shifted 500+ vehicles to electric power, cutting carbon intensity across the last-mile network.</p>
+                    </article>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section id="contact" class="contact-section">
-        <div class="contact-container">
-            <h2>Initiate Your Transition</h2>
-            <form id="contactForm">
-                <div class="input-group">
-                    <input type="text" id="name" placeholder="Full Name" required>
-                    <small class="error-msg"></small>
+            <section id="process" class="process-section">
+                <div class="section-intro">
+                    <span class="section-label">How we work</span>
+                    <h2>A streamlined process for faster, lower-risk delivery.</h2>
                 </div>
-                <div class="input-group">
-                    <input type="email" id="email" placeholder="Corporate Email" required>
-                    <small class="error-msg"></small>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <h3>01</h3>
+                        <p>Discovery & current state assessment</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>02</h3>
+                        <p>Target setting & pathway design</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>03</h3>
+                        <p>Implementation support & performance tracking</p>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <textarea id="message" rows="5" placeholder="Project Details" required></textarea>
-                    <small class="error-msg"></small>
+            </section>
+
+            <section id="contact" class="contact-section">
+                <div class="contact-wrap">
+                    <div class="contact-copy">
+                        <span class="section-label">Get in touch</span>
+                        <h2>Let’s design your next low-carbon milestone.</h2>
+                        <p>Send us a brief and we’ll respond with a tailored assessment and next steps.</p>
+                    </div>
+                    <form id="contactForm" class="contact-form">
+                        <div class="input-group">
+                            <label for="name">Full name</label>
+                            <input type="text" id="name" placeholder="Your name" required>
+                            <small class="error-msg"></small>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Corporate email</label>
+                            <input type="email" id="email" placeholder="name@company.com" required>
+                            <small class="error-msg"></small>
+                        </div>
+                        <div class="input-group">
+                            <label for="message">Project details</label>
+                            <textarea id="message" rows="5" placeholder="Tell us about your initiative" required></textarea>
+                            <small class="error-msg"></small>
+                        </div>
+                        <button type="submit" class="btn-primary">Send brief</button>
+                        <div id="formFeedback" class="form-feedback hidden">Thank you! We’ll be in touch within 24 hours.</div>
+                    </form>
                 </div>
-                <button type="submit" class="btn-primary">Send Brief</button>
-            </form>
-            <div id="formFeedback" class="hidden">Thank you. Our consultants will reach out within 24 hours.</div>
-        </div>
-    </section>
+            </section>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
